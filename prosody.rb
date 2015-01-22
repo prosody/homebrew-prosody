@@ -12,12 +12,6 @@ class Prosody < Formula
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
 
-  # Fix luarocks 2.2.0 support
-  patch do
-    url "http://hg.prosody.im/0.9/raw-rev/ce66fe13eebe"
-    sha1 "0374949de0018996b3f2c16de5f794bae3a73999"
-  end
-
   depends_on "lua51"
   depends_on "expat"
   depends_on "libidn"
