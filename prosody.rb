@@ -45,8 +45,8 @@ class Prosody < Formula
     # patch config
     inreplace 'prosody.cfg.lua.install' do |s|
       s.sub! '--"posix";', '"posix";'
-      s.sub! 'info = "prosody.log";', '-- info = "prosody.log";'
-      s.sub! 'error = "prosody.err";', '-- error = "prosody.err";'
+      s.sub! 'info = "prosody.log";', '-- info = "#{var}/log/prosody/prosody.log";'
+      s.sub! 'error = "prosody.err";', '-- error = "#{var}/log/prosody/prosody.err";'
       # s.sub! '-- "*syslog";', '"*syslog";'
       s.sub! '-- "*console";', '"*console";'
       s.sub! '----------- Virtual hosts -----------', "daemonize=false\n\n----------- Virtual hosts -----------"
