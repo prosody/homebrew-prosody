@@ -30,6 +30,7 @@ class Prosody < Formula
     # Install to the Cellar, but direct modules to prefix
     # Specify where the Lua is to avoid accidental conflict.
     lua_prefix = Formula["lua51"].opt_prefix
+    openssl = Formula["openssl"]
 
     args = ["--prefix=#{prefix}",
             "--sysconfdir=#{etc}/prosody",
@@ -37,7 +38,8 @@ class Prosody < Formula
             "--with-lua=#{lua_prefix}",
             "--with-lua-include=#{lua_prefix}/include/lua5.1",
             "--runwith=lua5.1",
-            "--ldflags=-bundle -undefined dynamic_lookup"]
+            "--cflags=-I#{openssl.opt_include}",
+            "--ldflags=-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"]
 
     system "./configure", *args
     system "make"
@@ -80,7 +82,7 @@ class Prosody < Formula
 
       # always build rocks against the homebrew openssl, not the system one
       File.open("#{libexec}/etc/luarocks/config-5.1.lua", "a") do |file|
-        file.write("external_deps_dirs = { [[#{Formula["openssl"].opt_prefix}]] }\n")
+        file.write("external_deps_dirs = { [[#{openssl.opt_prefix}]] }\n")
       end
     end
 
