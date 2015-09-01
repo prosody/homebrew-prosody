@@ -2,9 +2,9 @@ require "formula"
 
 class ProsodyNightly < Formula
   homepage "http://prosody.im"
-  url "https://prosody.im/nightly/0.10/build150/prosody-0.10-1nightly150.tar.gz"
-  sha1 "00be25e56d9704d3f542328bd1bcb6ed05453e4a"
-  version "0.10-1nightly150"
+  url "https://prosody.im/nightly/0.10/build154/prosody-0.10-1nightly154.tar.gz"
+  sha1 "b3f1183b5ac0936a679673a3b6cb3ff03acaa1c2"
+  version "0.10-1nightly154"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
