@@ -2,12 +2,9 @@ require "formula"
 
 class Prosody < Formula
   homepage "http://prosody.im"
-  #url "https://prosody.im/downloads/source/prosody-0.9.6.tar.gz"
-  #sha1 "ed8fd64cbe7ad9f33c451535258cd5fa2de0834e"
-  #version "0.9.6"
-  url "https://prosody.im/tmp/0.9.7/prosody-0.9.7.tar.gz"
-  sha1 "5515e15077ea0e8e26b83614a02ad632374a256b"
-  version "0.9.7"
+  url "https://prosody.im/downloads/source/prosody-0.9.8.tar.gz"
+  sha1 "e338eb995f3c594ab6d1f03a7f36224e93c31c0b"
+  version "0.9.8"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
