@@ -32,14 +32,23 @@ class Prosody < Formula
     lua_prefix = Formula["lua51"].opt_prefix
     openssl = Formula["openssl"]
 
+    # set CFLAGS/LDFLAGS based on host OS (for shared libraries)
+    if OS.linux?
+        cflags = "-fPIC -I#{openssl.opt_include}"
+        ldflags = "-shared -L#{openssl.opt_lib}"
+    else
+        cflags = "-I#{openssl.opt_include}"
+        ldflags = "-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"
+    end
+
     args = ["--prefix=#{prefix}",
             "--sysconfdir=#{etc}/prosody",
             "--datadir=#{var}/lib/prosody",
             "--with-lua=#{lua_prefix}",
             "--with-lua-include=#{lua_prefix}/include/lua5.1",
             "--runwith=lua5.1",
-            "--cflags=-I#{openssl.opt_include}",
-            "--ldflags=-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"]
+            "--cflags=#{cflags}",
+            "--ldflags=#{ldflags}"]
 
     system "./configure", *args
     system "make"
