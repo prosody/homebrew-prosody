@@ -94,7 +94,7 @@ class Prosody < Formula
     end
 
     system "#{bin}/prosody-luarocks", "install", "luasocket"
-    system "#{bin}/prosody-luarocks", "install", "luasec"
+    system "#{bin}/prosody-luarocks", "install", "luasec", "0.5.1"
     system "#{bin}/prosody-luarocks", "install", "luafilesystem"
     system "#{bin}/prosody-luarocks", "install", "luaexpat", "EXPAT_DIR=#{Formula["expat"].opt_prefix}"
     # system "#{bin}/prosody-luarocks", "install", "lua-zlib"
