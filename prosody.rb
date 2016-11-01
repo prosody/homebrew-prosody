@@ -2,12 +2,10 @@ require "formula"
 
 class Prosody < Formula
   homepage "http://prosody.im"
-  #url "https://prosody.im/downloads/source/prosody-0.9.6.tar.gz"
-  #sha1 "ed8fd64cbe7ad9f33c451535258cd5fa2de0834e"
-  #version "0.9.6"
-  url "https://prosody.im/tmp/0.9.7/prosody-0.9.7.tar.gz"
-  sha1 "5515e15077ea0e8e26b83614a02ad632374a256b"
-  version "0.9.7"
+
+  url "https://prosody.im/tmp/0.9.11/prosody-0.9.11.tar.gz"
+  sha1 "1cd50597a166300af06654f6c75dd38e296b7d83"
+  version "0.9.11"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
@@ -22,8 +20,8 @@ class Prosody < Formula
   end
 
   resource "luarocks" do
-    url "http://luarocks.org/releases/luarocks-2.2.0.tar.gz"
-    sha1 "e2de00f070d66880f3766173019c53a23229193d"
+    url "http://keplerproject.github.io/luarocks/releases/luarocks-2.4.1.tar.gz"
+    sha1 "5f236aa3a5b84808469e763041fcb86bbaf75c08"
   end
 
   def install
