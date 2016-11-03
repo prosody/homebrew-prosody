@@ -115,8 +115,9 @@ class Prosody < Formula
     # system "#{bin}/prosody-luarocks", "install", "lua-zlib"
   end
 
+  # TODO more detailed
   def caveats; <<-EOS.undent
-    TODO: proper docs
+    Prosody configs in: #{etc}/prosody
     Rocks install to: #{libexec}/lib/luarocks/rocks
 
     You may need to run `prosody-luarocks install` inside the Homebrew build
