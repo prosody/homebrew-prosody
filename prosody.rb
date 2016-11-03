@@ -3,8 +3,8 @@ require "formula"
 class Prosody < Formula
   homepage "http://prosody.im"
 
-  url "https://prosody.im/tmp/0.9.11/prosody-0.9.11.tar.gz"
-  sha1 "1cd50597a166300af06654f6c75dd38e296b7d83"
+  url "https://prosody.im/downloads/source/prosody-0.9.11.tar.gz"
+  sha256 "32bff4c323747f768c61b5c9a23790126d33258e96d4e589920b4c3d88b67256"
   version "0.9.11"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
@@ -20,8 +20,11 @@ class Prosody < Formula
   end
 
   resource "luarocks" do
-    url "http://keplerproject.github.io/luarocks/releases/luarocks-2.4.1.tar.gz"
-    sha1 "5f236aa3a5b84808469e763041fcb86bbaf75c08"
+    # This is the correct URL, but github.io is temporarily broken:
+    #   http://keplerproject.github.io/luarocks/releases/luarocks-2.4.1.tar.gz
+ 
+    url "https://github.com/luarocks/luarocks/raw/gh-pages/releases/luarocks-2.4.1.tar.gz"
+    sha256 "e429e0af9764bfd5cb640cac40f9d4ed1023fa17c052dff82ed0a41c05f3dcf9"
   end
 
   def install
