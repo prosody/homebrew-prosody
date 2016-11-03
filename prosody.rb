@@ -20,10 +20,7 @@ class Prosody < Formula
   end
 
   resource "luarocks" do
-    # This is the correct URL, but github.io is temporarily broken:
-    #   http://keplerproject.github.io/luarocks/releases/luarocks-2.4.1.tar.gz
- 
-    url "https://github.com/luarocks/luarocks/raw/gh-pages/releases/luarocks-2.4.1.tar.gz"
+    url "http://luarocks.github.io/luarocks/releases/luarocks-2.4.1.tar.gz"
     sha256 "e429e0af9764bfd5cb640cac40f9d4ed1023fa17c052dff82ed0a41c05f3dcf9"
   end
 
