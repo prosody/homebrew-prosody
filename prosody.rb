@@ -42,6 +42,11 @@ class Prosody < Formula
             "--cflags=-I#{openssl.opt_include}",
             "--ldflags=-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"]
 
+    # FIXME remove in next Prosody release, fixing a GNUism
+    inreplace 'certs/Makefile' do |s|
+      s.sub! '@chmod 400 $@ -c', '@chmod 400 $@'
+    end
+
     system "./configure", *args
     system "make"
 
