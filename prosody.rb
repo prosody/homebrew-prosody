@@ -97,7 +97,7 @@ class Prosody < Formula
     # set lua paths for our prosody-luarocks
     inreplace ["#{prefix}/bin/prosody", "#{prefix}/bin/prosodyctl"] do |s|
       rep = "-- Will be modified by configure script if run --"
-      luapaths = <<-EOS.undent.chomp
+      luapaths = <<~EOS.chomp
       package.path=[[#{libexec}/share/lua/5.1/?.lua;#{libexec}/share/lua/5.1/?/init.lua]];
       package.cpath=[[#{libexec}/lib/lua/5.1/?.so]];
       EOS
@@ -112,7 +112,7 @@ class Prosody < Formula
   end
 
   # TODO more detailed
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Prosody configs in: #{etc}/prosody
     Rocks install to: #{libexec}/lib/luarocks/rocks
 
