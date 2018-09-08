@@ -44,11 +44,6 @@ class Prosody < Formula
             "--cflags=#{cflags}",
             "--ldflags=#{ldflags}"]
 
-    # FIXME remove in next Prosody release, fixing a GNUism
-    inreplace 'certs/Makefile' do |s|
-      s.sub! '@chmod 400 $@ -c', '@chmod 400 $@'
-    end
-
     system "./configure", *args
     system "make"
 
