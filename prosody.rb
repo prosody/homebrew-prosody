@@ -3,9 +3,9 @@ require "formula"
 class Prosody < Formula
   homepage "http://prosody.im"
 
-  url "https://prosody.im/downloads/source/prosody-0.9.11.tar.gz"
-  sha256 "32bff4c323747f768c61b5c9a23790126d33258e96d4e589920b4c3d88b67256"
-  version "0.9.11"
+  url "https://prosody.im/downloads/source/prosody-0.9.14.tar.gz"
+  sha256 "27d1388acd79eaa453f2b194bd23c25121fe0a704d0dd940457caf1874ea1123"
+  version "0.9.14"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
