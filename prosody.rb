@@ -74,6 +74,10 @@ class Prosody < Formula
   def caveats; <<~EOS
     Prosody configs in: #{etc}/prosody
 
+    Prosody may complain about LuaExpat not supporting stanza size
+    limits. This is due to a situation with the version of LuaExpat
+    on LuaRocks.
+    See https://issues.prosody.im/1375 for further details.
     EOS
   end
 
