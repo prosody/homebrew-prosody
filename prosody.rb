@@ -9,7 +9,7 @@ class Prosody < Formula
 
   # NOTE Recommended version of Lua for Prosody 0.11.x is 5.2 but it is not
   # available in Homebrew, while 5.1, 5.3 and 5.4 are
-  depends_on "lua@5.1"
+  depends_on "lua@5.4"
   depends_on "expat"
   depends_on "icu4c"
   depends_on "openssl"
@@ -18,7 +18,7 @@ class Prosody < Formula
   def install
     # Install to the Cellar, but direct modules to prefix
     # Specify where the Lua is to avoid accidental conflict.
-    lua_prefix = Formula["lua@5.1"].opt_prefix
+    lua_prefix = Formula["lua@5.4"].opt_prefix
     openssl = Formula["openssl"]
     expat = Formula["expat"]
 
@@ -35,8 +35,8 @@ class Prosody < Formula
             "--sysconfdir=#{etc}/prosody",
             "--datadir=#{var}/lib/prosody",
             "--with-lua=#{lua_prefix}",
-            "--with-lua-include=#{lua_prefix}/include/lua5.1",
-            "--runwith=lua5.1",
+            "--with-lua-include=#{lua_prefix}/include/lua5.4",
+            "--runwith=lua5.4",
             "--cflags=#{cflags}",
             "--ldflags=#{ldflags}"]
 
@@ -52,11 +52,10 @@ class Prosody < Formula
       # pid
     end
 
-    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.1", "luafilesystem"
-    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.1", "luasocket"
-    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.1", "luasec", "OPENSSL_DIR=#{openssl.opt_prefix}"
-    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.1", "luaexpat", "EXPAT_DIR=#{expat.opt_prefix}"
-    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.1", "bit32" # NOTE only needed with Lua 5.1
+    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.4", "luafilesystem"
+    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.4", "luasocket"
+    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.4", "luasec", "OPENSSL_DIR=#{openssl.opt_prefix}"
+    system "luarocks", "install", "--tree=#{prefix}", "--lua-version=5.4", "luaexpat", "EXPAT_DIR=#{expat.opt_prefix}"
 
     (etc+"prosody").mkpath
     (var+"lib/prosody").mkpath
