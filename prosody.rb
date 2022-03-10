@@ -3,15 +3,15 @@ require "formula"
 class Prosody < Formula
   homepage "http://prosody.im"
 
-  url "https://prosody.im/downloads/source/prosody-0.11.13.tar.gz"
-  sha256 "39c61b346a09b5125b604cb969e14206cbbcb86c81156ffc6ba2d62527cf0432"
-  version "0.11.13"
+  url "https://prosody.im/downloads/source/prosody-0.12.0.tar.gz"
+  sha256 "752ff32015dac565fc3417c2196af268971c358ee066e51f5d912413580d889a"
+  version "0.12.0"
 
   # NOTE Recommended version of Lua for Prosody 0.11.x is 5.2 but it is not
   # available in Homebrew, while 5.1, 5.3 and 5.4 are
   depends_on "lua@5.1"
   depends_on "expat"
-  depends_on "libidn"
+  depends_on "icu4c"
   depends_on "openssl"
   depends_on "luarocks"
 
