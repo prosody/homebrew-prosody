@@ -3,7 +3,7 @@ require "formula"
 class Prosody < Formula
   homepage "http://prosody.im"
 
-  url "https://prosody.im/downloads/source/prosody-0.12.0.tar.gz"
+  url "https://prosody.im/downloads/source/prosody-0.12.1.tar.gz"
   sha256 "a7ecbbe41f01a4251805593ac6d15dbc6cb75d9c7a876c76b456cf74ff4b90e5"
   version "0.12.1"
 
