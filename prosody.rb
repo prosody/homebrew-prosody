@@ -4,8 +4,8 @@ class Prosody < Formula
   homepage "http://prosody.im"
 
   url "https://prosody.im/downloads/source/prosody-0.12.0.tar.gz"
-  sha256 "752ff32015dac565fc3417c2196af268971c358ee066e51f5d912413580d889a"
-  version "0.12.0"
+  sha256 "a7ecbbe41f01a4251805593ac6d15dbc6cb75d9c7a876c76b456cf74ff4b90e5"
+  version "0.12.1"
 
   depends_on "lua@5.4"
   depends_on "expat"
